@@ -1,0 +1,5 @@
+{
+    "name": "kadamwhite/altis-cache-debugging",
+    "description": "Expose AWS X-Ray trace cache stats in a more quickly readable QM panel",
+    "type": "wordpress-plugin"
+}
