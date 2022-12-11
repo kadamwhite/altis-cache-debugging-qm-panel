@@ -26,7 +26,7 @@ index 537a516..f259412 100644
  				$retval = call_user_func_array( array( $this->redis, $method ), $arguments );
 +				$redis_timing[] = [
 +					microtime( true ) - $start_time,
-+					$arguments[0],
++					$arguments[0] ?? '',
 +					$method
 +				];
  				return $retval;
