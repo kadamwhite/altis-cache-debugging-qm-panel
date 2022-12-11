@@ -104,27 +104,27 @@ class Output_Cache extends QM_Output_Html {
 		<tbody>
 			<tr>
 				<th>Cache Hits</th>
-				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['hits'] ); ?></td>
+				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['hits'] ?? 0 ); ?></td>
 			</tr>
 			<tr>
 				<th>Remote Gets</th>
-				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['remote_calls']['get'] ); ?></td>
+				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['remote_calls']['get'] ?? 0 ); ?></td>
 			</tr>
 			<tr>
 				<th>Remote Multi-Gets</th>
-				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['remote_calls']['mget'] ); ?></td>
+				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['remote_calls']['mget'] ?? 0 ); ?></td>
 			</tr>
 			<tr>
 				<td>Exists</td>
-				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['remote_calls']['exists'] ); ?></td>
+				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['remote_calls']['exists'] ?? 0 ); ?></td>
 			</tr>
 			<tr>
 				<th>Misses</th>
-				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['misses'] ); ?></td>
+				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['misses'] ?? 0 ); ?></td>
 			</tr>
 			<tr>
 				<th>Time</th>
-				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['time'] ); ?></td>
+				<td><?php echo esc_html( $local_trace['metadata']['stats']['object_cache']['time'] ?? 0 ); ?></td>
 			</tr>
 
 			<?php if ( isset( $redis_timing ) && is_array( $redis_timing ) ) : ?>
