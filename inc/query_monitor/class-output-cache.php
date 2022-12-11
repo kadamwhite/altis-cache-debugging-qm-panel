@@ -24,45 +24,6 @@ class Output_Cache extends QM_Output_Html {
 		return __( 'Cache', 'cache-debugging-stats-qm-panel' );
 	}
 
-	/*
-	public function output() {
-		?>
-		<?php $this->before_non_tabular_output( OUTPUT_ELEMENT_ID ); ?>
-		<caption>
-			<?php /* translators: Trace ID *//* ?>
-			<h2><?php printf( esc_html__( 'Trace ID: %s', 'cache-debugging-stats-qm-panel' ), get_root_trace_id() ); ?></h2>
-		</caption>
-		<div style="width:100%;margin-top:1em;">
-			<?php foreach ( $this->collector->traces as $trace ) : ?>
-				<?php
-				error_log( gettype( $GLOBALS['redis_timing'] ) );
-				if ( is_array( $trace ) && $trace['name'] !== 'local' ) {
-					continue;
-				}
-				if ( ! isset( $trace['metadata']['stats']['object_cache'] ) ) {
-					continue;
-				}
-				?>
-				<ul>
-					<li>
-						<strong>Cache Hits</strong>: <?php echo esc_html( $trace['metadata']['stats']['object_cache']['hits'] ); ?>
-						<ul style="padding-left:1em; list-style-type:disc">
-							<li><strong>Remote gets</strong>: <?php echo esc_html( $trace['metadata']['stats']['object_cache']['remote_calls']['get'] ); ?></li>
-							<li><strong>Remote mgets</strong>: <?php echo esc_html( $trace['metadata']['stats']['object_cache']['remote_calls']['mget'] ); ?></li>
-							<li>Exists: <?php echo esc_html( $trace['metadata']['stats']['object_cache']['remote_calls']['exists'] ); ?></li>
-						</ul>
-					</li>
-
-					<li><strong>Misses</strong>: <?php echo esc_html( $trace['metadata']['stats']['object_cache']['misses'] ); ?></li>
-					<li><strong>Time</strong>: <?php echo esc_html( $trace['metadata']['stats']['object_cache']['time'] ); ?></li>
-				</ul>
-			<?php endforeach ?>
-		</div>
-		<?php
-		$this->after_non_tabular_output();
-	}
-	*/
-
 	public function output() {
 		// Keep an eye out for a timings array from a modified version of humanmade/wp-redis.
 		global $redis_timing;
@@ -88,7 +49,6 @@ class Output_Cache extends QM_Output_Html {
 			return;
 		}
 
-		// error_log( print_r( $local_trace, true ) );
 		$this->before_tabular_output( OUTPUT_ELEMENT_ID );
 		?>
 		<caption>
