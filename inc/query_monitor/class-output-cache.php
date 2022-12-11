@@ -88,7 +88,7 @@ class Output_Cache extends QM_Output_Html {
 			return;
 		}
 
-		error_log( print_r( $local_trace, true ) );
+		// error_log( print_r( $local_trace, true ) );
 		$this->before_tabular_output( OUTPUT_ELEMENT_ID );
 		?>
 		<caption>
